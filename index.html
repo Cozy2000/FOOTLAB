@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FOOTLAB | Exclusive Sneakers</title>
+  <title>FOOTLAB | Authentic Urban Style</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -17,20 +17,53 @@
       color: #ffffff;
     }
 
+    /* Header con Navigazione */
     header {
-      padding: 25px;
-      text-align: center;
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: 4px;
+      padding: 20px 40px;
       background: #000;
       border-bottom: 1px solid #222;
-      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #00ff9c;
+    }
+
+    /* Hero Section */
     .hero {
-      height: 55vh;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+      height: 50vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                   url("https://images.unsplash.com/photo-1600185365483-26d7a4cc7519") center / cover no-repeat;
       display: flex;
       flex-direction: column;
@@ -40,61 +73,47 @@
     }
 
     .hero h1 {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 25px 40px;
-      border-radius: 12px;
-      font-size: 36px;
+      font-size: 48px;
       font-weight: 700;
-      margin-bottom: 10px;
-      border: 1px solid #00ff9c;
+      margin: 0;
+      letter-spacing: 2px;
     }
 
     .hero p {
-      font-size: 18px;
-      letter-spacing: 2px;
+      font-size: 16px;
       color: #00ff9c;
-      font-weight: 400;
       text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-top: 10px;
     }
 
-    .trust-bar {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      background: #161616;
-      padding: 15px;
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #aaa;
-    }
-
+    /* Griglia Prodotti */
     .container {
-      padding: 40px;
+      padding: 60px 40px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
 
     .card {
       background: #161616;
-      border-radius: 18px;
+      border-radius: 12px;
       padding: 20px;
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.3s ease;
       border: 1px solid #222;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+      transform: translateY(-10px);
       border-color: #00ff9c;
     }
 
     .card img {
       width: 100%;
-      border-radius: 14px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
       margin-bottom: 15px;
     }
 
@@ -107,45 +126,47 @@
     .price {
       font-size: 20px;
       font-weight: 700;
-      margin: 10px 0;
       color: #00ff9c;
+      margin-bottom: 15px;
     }
 
-    a.buy {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 12px 25px;
-      background: #00ff9c;
-      color: #000;
-      border-radius: 30px;
+    .buy {
+      display: block;
+      padding: 12px;
+      background: transparent;
+      color: #00ff9c;
+      border: 2px solid #00ff9c;
+      border-radius: 6px;
       font-weight: 700;
       text-decoration: none;
-      transition: all 0.3s ease;
       text-transform: uppercase;
+      transition: all 0.3s ease;
     }
 
-    a.buy:hover {
-      background: #ffffff;
-      transform: scale(1.05);
+    .buy:hover {
+      background: #00ff9c;
+      color: #000;
     }
 
     footer {
       text-align: center;
-      padding: 40px 20px;
-      color: #777;
-      font-size: 14px;
-      border-top: 1px solid #222;
+      padding: 40px;
       background: #000;
+      border-top: 1px solid #222;
+      color: #555;
     }
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 24px;
-        padding: 20px;
-      }
-      .trust-bar {
+    /* Mobile */
+    @media (max-width: 768px) {
+      header {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
+      }
+      nav ul {
+        gap: 15px;
+      }
+      .hero h1 {
+        font-size: 32px;
       }
     }
   </style>
@@ -153,48 +174,49 @@
 <body>
 
   <header>
-    FOOTLAB
+    <a href="#" class="logo">FOOTLAB</a>
+    <nav>
+      <ul>
+        <li><a href="#">Sneakers</a></li>
+        <li><a href="#">Abbigliamento</a></li>
+        <li><a href="#">Accessories</a></li>
+      </ul>
+    </nav>
   </header>
 
   <section class="hero">
     <h1>FOOTLAB</h1>
-    <p>Prodotti Autentici • Edizioni Limitate</p>
+    <p>Prodotti Autentici</p>
   </section>
-
-  <div class="trust-bar">
-    <span>✓ Spedizione Gratuita</span>
-    <span>✓ 100% Originali</span>
-    <span>✓ Reso Facile</span>
-  </div>
 
   <main class="container">
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3" alt="Sneaker">
-      <h3>Air Max Limited</h3>
-      <p class="price">€189,00</p>
-      <a href="#" class="buy">Acquista Ora</a>
+      <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a" alt="Sneakers">
+      <h3>Dunk Low 'Green'</h3>
+      <p class="price">€140,00</p>
+      <a href="#" class="buy">Scopri Sneakers</a>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Sneaker">
-      <h3>Classic Red Edition</h3>
-      <p class="price">€129,00</p>
-      <a href="#" class="buy">Acquista Ora</a>
+      <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7" alt="Abbigliamento">
+      <h3>Hoodie Oversize</h3>
+      <p class="price">€65,00</p>
+      <a href="#" class="buy">Vedi Abbigliamento</a>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a" alt="Sneaker">
-      <h3>Dunk Low Retro</h3>
-      <p class="price">€145,00</p>
-      <a href="#" class="buy">Acquista Ora</a>
+      <img src="https://images.unsplash.com/photo-1575424909138-46b05e5919ec" alt="Accessori">
+      <h3>Crest Cap Black</h3>
+      <p class="price">€35,00</p>
+      <a href="#" class="buy">Guarda Accessori</a>
     </div>
   </main>
 
   <footer>
-    &copy; 2024 FOOTLAB - Solo il meglio per i tuoi piedi.<br>
-    Qualità garantita e Prodotti Autentici.
+    &copy; 2026 FOOTLAB. Prodotti Autentici & Stile Urban.
   </footer>
 
 </body>
 </html>
+
 
