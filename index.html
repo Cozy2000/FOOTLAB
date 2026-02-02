@@ -1,1 +1,200 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FOOTLAB | Exclusive Sneakers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
+    }
+
+    header {
+      padding: 25px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      background: #000;
+      border-bottom: 1px solid #222;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      height: 55vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                  url("https://images.unsplash.com/photo-1600185365483-26d7a4cc7519") center / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 25px 40px;
+      border-radius: 12px;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      border: 1px solid #00ff9c;
+    }
+
+    .hero p {
+      font-size: 18px;
+      letter-spacing: 2px;
+      color: #00ff9c;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .trust-bar {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background: #161616;
+      padding: 15px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #aaa;
+    }
+
+    .container {
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #161616;
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #222;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+      border-color: #00ff9c;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 14px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin: 10px 0;
+      text-transform: uppercase;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 10px 0;
+      color: #00ff9c;
+    }
+
+    a.buy {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 25px;
+      background: #00ff9c;
+      color: #000;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    a.buy:hover {
+      background: #ffffff;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #777;
+      font-size: 14px;
+      border-top: 1px solid #222;
+      background: #000;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 24px;
+        padding: 20px;
+      }
+      .trust-bar {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    FOOTLAB
+  </header>
+
+  <section class="hero">
+    <h1>FOOTLAB</h1>
+    <p>Prodotti Autentici • Edizioni Limitate</p>
+  </section>
+
+  <div class="trust-bar">
+    <span>✓ Spedizione Gratuita</span>
+    <span>✓ 100% Originali</span>
+    <span>✓ Reso Facile</span>
+  </div>
+
+  <main class="container">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3" alt="Sneaker">
+      <h3>Air Max Limited</h3>
+      <p class="price">€189,00</p>
+      <a href="#" class="buy">Acquista Ora</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Sneaker">
+      <h3>Classic Red Edition</h3>
+      <p class="price">€129,00</p>
+      <a href="#" class="buy">Acquista Ora</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a" alt="Sneaker">
+      <h3>Dunk Low Retro</h3>
+      <p class="price">€145,00</p>
+      <a href="#" class="buy">Acquista Ora</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2024 FOOTLAB - Solo il meglio per i tuoi piedi.<br>
+    Qualità garantita e Prodotti Autentici.
+  </footer>
+
+</body>
+</html>
 
