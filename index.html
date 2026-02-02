@@ -3,82 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FOOTLAB | Store</title>
+    <title>FOOTLAB | Store Ufficiale</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background-color: #000; color: #fff; }
+        
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: #000; 
+            color: #fff; 
+            overflow-x: hidden;
+        }
 
+        /* NAVBAR - CORRETTA E VISIBILE */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
-            background-color: #0a0a0a;
-            border-bottom: 2px solid #00ff9c;
+            background-color: #000;
+            border-bottom: 1px solid #222;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo { font-size: 24px; font-weight: 700; color: #00ff9c; text-decoration: none; letter-spacing: 2px; }
-        .nav-links { display: flex; list-style: none; }
-        .nav-links li { margin-left: 20px; }
-        .nav-links a { color: #fff; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; }
-        .nav-links a:hover { color: #00ff9c; }
-
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=1200&q=80') center/cover;
+        .logo { 
+            font-size: 24px; 
+            font-weight: 700; 
+            color: #00ff9c; 
+            text-decoration: none; 
+            letter-spacing: 2px; 
         }
 
-        .hero h1 { font-size: 50px; text-transform: uppercase; letter-spacing: 4px; }
-        .hero p { color: #00ff9c; font-size: 16px; letter-spacing: 3px; }
+        .nav-links { 
+            display: flex; 
+            list-style: none; 
+        }
 
+        .nav-links li { 
+            margin-left: 25px; 
+        }
+
+        .nav-links a { 
+            color: #fff; 
+            text-decoration: none; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            font-size: 13px; 
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover { 
+            color: #00ff9c; 
+        }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1460353581641-37baddab0fa2?q=80&w=2071') center/cover;
+            border-bottom: 2px solid #00ff9c;
+        }
+
+        .hero h1 { font-size: clamp(40px, 8vw, 70px); text-transform: uppercase; letter-spacing: 5px; }
+        .hero p { color: #00ff9c; font-size: 18px; letter-spacing: 3px; font-weight: 400; margin-top: 10px; }
+
+        /* GRIGLIA CATEGORIE */
         .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            padding: 50px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 60px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .card {
             background-color: #111;
-            width: 320px;
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
             border: 1px solid #222;
             text-align: center;
-            padding-bottom: 25px;
-            transition: 0.3s ease;
+            padding-bottom: 30px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .card:hover { border-color: #00ff9c; transform: translateY(-8px); }
+        .card:hover { 
+            border-color: #00ff9c; 
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 255, 156, 0.1);
+        }
 
         .card img {
             width: 100%;
-            height: 380px;
+            height: 450px;
             object-fit: cover;
+            filter: grayscale(20%);
+            transition: 0.4s;
         }
 
-        .card h3 { margin: 20px 0; text-transform: uppercase; font-size: 20px; }
+        .card:hover img { filter: grayscale(0%); }
+
+        .card h3 { 
+            margin: 25px 0; 
+            text-transform: uppercase; 
+            font-size: 22px; 
+            letter-spacing: 2px;
+        }
 
         .btn {
             display: inline-block;
             background-color: #00ff9c;
             color: #000;
-            padding: 12px 30px;
+            padding: 14px 40px;
             text-decoration: none;
             font-weight: 700;
-            border-radius: 5px;
+            border-radius: 4px;
             text-transform: uppercase;
+            font-size: 14px;
         }
 
-        footer { text-align: center; padding: 40px; color: #444; font-size: 12px; border-top: 1px solid #222; }
+        .btn:hover {
+            background-color: #fff;
+        }
 
-        @media (max-width: 768px) { .nav-links { display: none; } }
+        footer { 
+            text-align: center; 
+            padding: 50px; 
+            color: #444; 
+            font-size: 12px; 
+            border-top: 1px solid #222; 
+        }
+
+        /* MOBILE FIX */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .nav-links { justify-content: center; width: 100%; }
+            .nav-links li { margin: 0 10px; }
+            .hero h1 { font-size: 40px; }
+        }
     </style>
 </head>
 <body>
@@ -101,27 +166,28 @@
 
     <main class="container">
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=500&q=80" alt="Sneakers">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070" alt="Sneakers Collection">
             <h3>Sneakers</h3>
-            <a href="sneakers.html" class="btn">Esplora</a>
+            <a href="sneakers.html" class="btn">Shop Now</a>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=500&q=80" alt="Abbigliamento">
+            <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?q=80&w=1974" alt="Apparel Collection">
             <h3>Abbigliamento</h3>
-            <a href="abbigliamento.html" class="btn">Esplora</a>
+            <a href="abbigliamento.html" class="btn">Shop Now</a>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Accessories">
+            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1947" alt="Accessories Collection">
             <h3>Accessories</h3>
-            <a href="accessories.html" class="btn">Esplora</a>
+            <a href="accessories.html" class="btn">Shop Now</a>
         </div>
     </main>
 
     <footer>
-        &copy; 2026 FOOTLAB | PRODOTTI AUTENTICI | MILANO
+        &copy; 2026 FOOTLAB | HUB AUTORIZZATO | MILANO
     </footer>
 
 </body>
 </html>
+
